@@ -5,6 +5,7 @@ module.exports = {
         src: [
             '*.html',
             'assets/fonts/bootstrap/**',
+            'assets/img/**',
         ],
         dest: 'dist/',
     }
