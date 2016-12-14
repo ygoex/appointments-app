@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>My appointments</title>
+    <!-- Custom CSS -->
+    <link href="assets/css/custom.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Specific style for IE versions less than 8 -->
+    <!--[if lt IE 8]>
+    <p class="browsehappy">The content on this website is not properly displayed because you are using an <strong>outdated</strong> browser. Please upgrade your browser or, alternatively,
+    <a href="http://browsehappy.com/">use a different one</a> to improve your experience.
+    </p>
+    <![endif]-->
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController" class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>There are
+                    <span>{{getTotal()}}</span> appointments in your list
+                </h3>
+                <button class='btn btn-primary mb35' ng-click="openForm()" ng-hide="editStatus">New appointment</button>
+                <form ng-show="editStatus">
+                    <div class="col-sm-12 form-group ">
+                        <label for="app-title">Appointment title</label>
+                        <input ng-model='newTitle' placeholder="Ex. Arrange Yolanda's second interview" required type='text' class="form-control" id="app-title">
+                    </div>
+                    <div class="col-sm-7 form-group">
+                        <p class="fake-label">Appointment date</p>
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="newDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="openCal()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <p class="fake-label">Appointment time</p>
+                        <div uib-timepicker ng-model="newDate" hour-step="hstep" minute-step="mstep" show-meridian="true"></div>
+                    </div>
+                    <div class="col-sm-12 mb35">
+                        <button class='btn btn-default' ng-click='closeForm()'>Close</button>
+                        <button class='btn btn-primary' ng-click='add()'>Add</button></div>
+                </form>
+                <my-directive apps="apps">Loading...</my-directive>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- JS Libs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.1/ui-bootstrap-tpls.min.js"></script>
+<!-- Custom JS -->
+<script src="assets/js/app.min.js"></script>
+<script type="text/ng-template" id="component.html">
+    <table class='table'>
+        <tr ng-repeat="app in apps | orderBy:'date'">
+            <td>
+                <h4>{{app.title | uppercase}}</h4>
+                <p>Date: {{app.date | date:'EEEE, dd MMMM yyyy'}}</p>
+                <p>Time: {{app.date | date:'HH:mm'}}</p>
+            </td>
+        </tr>
+    </table>
+</script>
+
+</html>

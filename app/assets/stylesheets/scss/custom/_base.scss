@@ -1,0 +1,133 @@
+//Here we don't use classes, only html elements (tags)
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: 16px;
+
+    @include breakpoint(large) {
+        font-size: 21px;
+    }
+}
+
+body {
+    font-family: $font-family-body;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+
+    color: $charcoal;
+    //background: url(../img/css/03x.png) repeat fixed;
+    background: $white;
+
+    @include breakpoint(large) {
+        line-height: 1.9;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: steelblue;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    h3 {
+        margin-bottom: 20px;
+
+        font-size: 1.5rem;
+
+        letter-spacing: .5px;
+        text-transform: uppercase;
+    }
+    h4 {
+        margin-top: 20px;
+
+        font-weight: bold;
+
+        letter-spacing: .5px;
+    }
+    p {
+        margin: 10px 0;
+    }
+    img {
+        border: 1px solid #eee;
+    }
+}
+
+section:not(:first-child) {
+    margin-top: 35px;
+}
+
+textarea {
+    resize: none;
+}
+
+abbr {
+    font-weight: bold;
+
+    @include transition(all, .35s, linear);
+}
+
+abbr:hover::after {
+    margin-left: 7px;
+
+    font-weight: normal;
+
+    content: attr(title);
+
+    color: $charcoal;
+    background: $highlight;
+}
+
+pre {
+    padding: 15px;
+
+    color: $charcoal;
+    border: 1px solid $highlight;
+    border-left: 5px solid $yellow;
+    border-radius: 1px;
+    background-color: $highlight;
+
+    @include font-pixel(14);
+}
+
+code {
+    color: $charcoal;
+    background-color: light($highlight,10%);
+}
+
+//snippet to avoid hideous top shadow in input boxes on ipads
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"] {
+    -webkit-appearance: none;
+       -moz-appearance: none; /* mobile firefox too! */
+}
+
+
+::selection {
+    color: $white;
+    background-color: rgba($port80, .9);
+}
+
+::-moz-selection {
+    color: $white;
+    background-color: rgba($port80, .9);
+}

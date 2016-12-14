@@ -1,0 +1,15 @@
+default:
+  description: 'Default build'
+  tasks:
+    - dev
+    - server
+dev:
+  description: 'Development build'
+  tasks:
+    - 'concurrent:devStep1'
+    - 'concurrent:devStep2'
+server:
+  description: 'Create a server'
+  tasks:
+    - connect
+    - watch

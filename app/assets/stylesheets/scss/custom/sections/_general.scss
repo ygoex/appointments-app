@@ -1,0 +1,60 @@
+$c-font: #222;
+$c-white: #fff;
+$c-banana: #fee265;
+$c-aqua: #43cea2;
+$c-blue: #185a9d;
+$lg-space: 55px;
+$sm-space: 35px;
+$md-font: 16px;
+$sm-font: 14px;
+html {
+    background: $c-blue;
+}
+
+body {
+    padding-top: $lg-space;
+    font-family: 'Roboto Mono', monospace;
+    font-size: $md-font;
+    color: $c-font;
+    background: -webkit-linear-gradient(top, $c-aqua 0%, $c-blue 100%);
+    background: linear-gradient(to bottom, $c-aqua 0%, $c-blue 100%);
+    background-repeat: no-repeat;
+}
+
+.container {
+    margin-bottom: $lg-space;
+    background: $c-white;
+}
+
+h3 {
+    margin: $lg-space 0 $sm-space;
+}
+
+h4,
+p {
+    margin-bottom: 10px;
+}
+
+.mb35 {
+    margin-bottom: $sm-space;
+}
+
+label,
+.fake-label {
+    font-weight: normal;
+    font-size: $sm-font;
+}
+
+.table {
+    margin-bottom: $sm-space;
+}
+
+::selection {
+    color: $c-font;
+    background: $c-banana;
+}
+
+::-moz-selection {
+    color: $c-font;
+    background: $c-banana;
+}

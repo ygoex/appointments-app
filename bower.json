@@ -1,0 +1,18 @@
+{
+    "name": "starting-project",
+    "version": "0.0.1",
+    "author": [
+        "Yolanda Goex <helloygoex@gmail.com>"
+    ],
+    "description": "Custom boilerplate",
+    "main": "app/index.html",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "app/bower_components"
+    ],
+    "dependencies": {
+        "bootstrap-sass": "^3.3.7"
+    }
+}

@@ -1,0 +1,63 @@
+module.exports = {
+    dist: {
+        options: {
+            ignore: [
+                'h4',
+                'p',
+                '.table',
+                '.table>tbody>tr>td',
+                '.table>tbody>tr>th',
+                '.table>tfoot>tr>td',
+                '.table>tfoot>tr>th',
+                '.table>thead>tr>td',
+                '.table>thead>tr>th',
+                '.btn-link:focus',
+                '.btn-link:hover',
+                '.btn-link',
+                '.btn-link:active',
+                '.btn-link:focus',
+                '.btn-link:hover',
+                '.uib-datepicker-popup.dropdown-menu',
+                '.dropdown-menu',
+                '.uib-button-bar',
+                '.btn-info',
+                '.btn-group-sm>.btn',
+                '.btn-sm',
+                '.btn-group-vertical>.btn',
+                '.btn-group>.btn',
+                '.btn .caret',
+                '.btn-group>.btn:first-child',
+                '.btn-group>.btn-group:first-child:not(:last-child)>.btn:last-child',
+                '.btn-group>.btn-group:first-child:not(:last-child)>.dropdown-toggle',
+                '.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle)',
+                '.btn-group .btn+.btn',
+                '.btn-group .btn+.btn-group',
+                '.btn-group .btn-group+.btn',
+                '.btn-group .btn-group+.btn-group',
+                '.btn-danger',
+                '.btn-success',
+                '.btn-info.active:hover',
+                '.uib-datepicker .uib-title',
+                '.uib-left',
+                '.uib-right',
+                '.glyphicon-chevron-up',
+                '.glyphicon-chevron-down',
+                '.glyphicon-chevron-left',
+                '.glyphicon-chevron-right',
+                '.glyphicon-chevron-up::before',
+                '.glyphicon-chevron-down::before',
+                '.glyphicon-chevron-left::before',
+                '.glyphicon-chevron-right::before',
+                '.pull-right',
+                '.text-center',
+                '.btn-group>.btn-group:last-child:not(:first-child)>.btn:first-child',
+                '.btn-group>.btn:last-child:not(:first-child)',
+                '.btn-group>.dropdown-toggle:not(:first-child)',
+                '.sr-only'
+            ]
+        },
+        files: {
+            'dist/assets/css/custom.min.css': ['dist/index.html']
+        }
+    }
+};

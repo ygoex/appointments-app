@@ -1,0 +1,295 @@
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+    01. Light: add percentage of white to a color
+    02. Shade: add percentage of black to a color
+    03. Font-pixel: convert pixels in fonts to rem
+    04. Border: add custom borders
+    05. Transition: include transition and vendors for different browsers
+    06. Transform: rotate, scale, translate and skew
+    07. Breakpoints: xs, small, medium, large and xl
+    08. Animation: both mixins are needed to create an animation
+    09. Box shadow
+    10. Short text to add ellipsis when a long text does not fit in a small container, overall on mobiles
+    11. Vertical align
+    12. Background plain gradient
+    13. Background image gradient
+    14. Cross browser opacity
+
+*/
+
+
+/*  --------------------------------------------------
+    01. Light: add percentage of white to a color
+    --------------------------------------------------  */
+
+    @function light($color, $percent) {
+        @return mix(white, $color, $percent);
+    }
+
+/*  --------------------------------------------------
+    02. Shade: add percentage of black to a color
+    --------------------------------------------------  */
+
+    @function shade($color, $percent) {
+        @return mix(black, $color, $percent);
+    }
+
+/*  --------------------------------------------------
+    03. Font-pixel: convert pixels in fonts to rem
+    --------------------------------------------------  */
+
+    @mixin font-pixel($size, $line: $size * 1.4) {
+        font-size: ($size / 16) + rem;
+        line-height: ($line / 16) + rem;
+    }
+
+/*  --------------------------------------------------
+    04. Border: add custom borders
+    --------------------------------------------------  */
+
+    @mixin border($size, $color, $position) {
+        @if $position=='all' {
+            border: $size solid $color;
+        }
+        @else if $position=='top' {
+            border-top: $size solid $color;
+        }
+        @else if $position=='bottom' {
+            border-bottom: $size solid $color;
+        }
+        @else if $position=='right' {
+            border-right: $size solid $color;
+        }
+        @else if $position=='left' {
+            border-left: $size solid $color;
+        }
+        @else if $position=='top-bottom' {
+            border-top: $size solid $color;
+            border-bottom: $size solid $color;
+        }
+        @else if $position=='right-left' {
+            border-left: $size solid $color;
+            border-right: $size solid $color;
+        }
+    }
+
+/*  --------------------------------------------------
+    05. Transition: include transition and vendors
+    --------------------------------------------------  */
+
+    @mixin transition($transition-property, $transition-time, $method) {
+        -webkit-transition: $transition-property $transition-time $method;
+        -ms-transition: $transition-property $transition-time $method;
+        transition: $transition-property $transition-time $method;
+    }
+
+/*  --------------------------------------------------
+    06. Transform: rotate, scale, translate and skew
+    --------------------------------------------------  */
+
+    //generic transform
+    @mixin transform($transforms) {
+        -moz-transform: $transforms;
+        -o-transform: $transforms;
+        -ms-transform: $transforms;
+        -webkit-transform: $transforms;
+        transform: $transforms;
+    }
+
+    //rotate
+    @mixin rotate ($deg) {
+        @include transform(rotate(#{$deg}deg));
+    }
+
+    //scale
+    @mixin scale($scale) {
+        @include transform(scale($scale));
+    }
+
+    //translate
+    @mixin translate ($x, $y) {
+        @include transform(translate($x, $y));
+    }
+
+    //skew
+    @mixin skew ($x, $y) {
+        @include transform(skew(#{$x}deg, #{$y}deg));
+    }
+
+/*  --------------------------------------------------
+    07. Breakpoints: xs, small, medium, large and xl
+    --------------------------------------------------  */
+
+    @mixin breakpoint($point) {
+        @if $point==xs {
+            @media screen and (min-width: 480px) {
+                @content;
+            }
+        }
+        @if $point==xs-landscape {
+            @media screen and (min-width: 480px) and (orientation: landscape) {
+                @content;
+            }
+        }
+        @if $point==xs-portrait {
+            @media screen and (min-width: 480px) and (orientation: portrait) {
+                @content;
+            }
+        }
+        @else if $point==small {
+            @media screen and (min-width: 600px) {
+                @content;
+            }
+        }
+        @else if $point==small-portrait {
+            @media screen and (min-width: 600px) and (orientation: portrait) {
+                @content;
+            }
+        }
+        @else if $point==small-landscape {
+            @media screen and (min-width: 768px) {
+                @content;
+            }
+        }
+        @else if $point==medium-portrait {
+            @media screen and (min-width: 768px) and (orientation: portrait) {
+                @content;
+            }
+        }
+        @else if $point==medium-landscape {
+            @media screen and (min-width: 992px) {
+                @content;
+            }
+        }
+        @else if $point==large {
+            @media screen and (min-width: 1200px) {
+                @content;
+            }
+        }
+        @else if $point==xl {
+            @media screen and (min-width: 1920px) {
+                @content;
+            }
+        }
+    }
+
+/*  --------------------------------------------------
+    08. Animation: both mixins are needed to create an animation
+    --------------------------------------------------  */
+
+    @mixin animation($animation-name, $transition-time) {
+        -webkit-animation: $animation-name $transition-time;
+        -ms-animation: $animation-name $transition-time;
+        animation: $animation-name $transition-time;
+    }
+
+    @mixin keyframes($animationName) {
+        @-webkit-keyframes #{$animationName} {
+            @content;
+        }
+        @-moz-keyframes #{$animationName} {
+            @content;
+        }
+        @-o-keyframes #{$animationName} {
+            @content;
+        }
+        @keyframes #{$animationName} {
+            @content;
+        }
+    }
+
+/*  --------------------------------------------------
+    09. Box shadow
+    --------------------------------------------------  */
+
+    @mixin box-shadow {
+        -webkit-box-shadow: 0 22px 85px -25px rgba(0, 0, 0, 0.75);
+        box-shadow: 0 22px 85px -25px rgba(0, 0, 0, 0.75);
+    }
+
+/*  --------------------------------------------------
+    10. Short text to add ellipsis when a long text
+        does not fit in a small container, overall on mobiles
+    --------------------------------------------------  */
+
+    @mixin short-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+/*  --------------------------------------------------
+    11. Vertical align
+    --------------------------------------------------  */
+
+    @mixin vertical-align {
+        position: relative;
+        top: 50%;
+        -moz-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=0, M22=1, SizingMethod='auto expand')";
+        filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=0, M22=1, SizingMethod='auto expand')";
+    }
+
+/*  --------------------------------------------------
+    12. Background plain gradient
+    --------------------------------------------------  */
+    @mixin plain-gradient {
+        /* Chrome 10+, Saf5.1+ */
+        background: -webkit-linear-gradient(0deg, rgba($port80,0.85) 15% ,rgba($turq,0.85) 85%),$white;
+        /* Firefox 3.6 - 15 */
+        background: -moz-linear-gradient(0deg, rgba($port80,0.85) 15% ,rgba($turq,0.85) 85%),$white;
+        /* IE10 */
+        background: -ms-linear-gradient(0deg, rgba($port80,0.85) 15% ,rgba($turq,0.85) 85%),$white;
+        /* W3C */
+        background: linear-gradient(90deg, rgba($port80,0.85) 15% ,rgba($turq,0.85) 85%),$white;
+        /* "Invalid", but works in 6-8 */
+        filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#6397C7, endColorstr=#5CAFBF)";
+        /* Valid, works in 8-9 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=1, startColorstr=#6397C7, endColorstr=#6397C7)";
+        /* Opera 11.1 - 12 */
+        background: -o-linear-gradient(0deg, rgba($port80,0.85) 15% ,rgba($turq,0.85) 85%),$white;
+    }
+
+/*  --------------------------------------------------
+    13. Background image gradient
+    --------------------------------------------------  */
+    @mixin image-gradient {
+        /* Chrome 10+, Saf5.1+ */
+        background: -webkit-linear-gradient(0deg, rgba($port80, 0.85) 15%, rgba($turq, 0.85) 85%), $white url(../img/hubtill_barcodex.png) no-repeat center center fixed;
+        /* Firefox 3.6 - 15 */
+        background: -moz-linear-gradient(0deg, rgba($port80, 0.85) 15%, rgba($turq, 0.85) 85%), $white url(../img/hubtill_barcodex.png) no-repeat center center fixed;
+        /* IE10 */
+        background: -ms-linear-gradient(0deg, rgba($port80, 0.85) 15%, rgba($turq, 0.85) 85%), $white url(../img/hubtill_barcodex.png) no-repeat center center fixed;
+        /* W3C */
+        background: linear-gradient(90deg, rgba($port80, 0.85) 15%, rgba($turq, 0.85) 85%), $white url(../img/hubtill_barcodex.png) no-repeat center center fixed;
+        /* "Invalid", but works in 6-8 */
+        filter: "progid: DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#6397C7, endColorstr=#6397C7)";
+        /* Valid, works in 8-9 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=1, startColorstr=#6397C7, endColorstr=#6397C7)";
+        /* Opera 11.1 - 12 */
+        background: -o-linear-gradient(0deg, rgba($port80, 0.85) 15%, rgba($turq, 0.85) 85%), $white url(../img/hubtill_barcodex.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+
+/*  -------------------------------------------------------
+    14. Cross browser opacity: usage @include opacity(0.8);
+    ---------------------------------------------------  */
+    @mixin opacity($opacity) {
+        opacity: $opacity;
+        $opacity-ie: $opacity * 100;
+        filter: alpha(opacity=$opacity-ie); //IE8
+    }
+
+
+
+
+
+

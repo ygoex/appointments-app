@@ -1,0 +1,20 @@
+
+/* Colors */
+
+@import 'palettes/_grey.scss';
+@import 'palettes/_customColors.scss';
+@import 'palettes/_material.scss';
+@import 'palettes/_flat.scss';
+@import 'palettes/_pantone.scss';
+
+
+/* Fonts */
+
+$font-size: 16px;
+$font-family-body: "Open Sans",
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+$font-color: $font-grey;
+
