@@ -4,6 +4,10 @@ Assuming that npm and Grunt are both installed:
 
 1. Download or clone the project
 
+  ```
+  git clone https://github.com/ygoex/appointmentsapp.git
+  ```
+
 2. Install npm packages
 
   ```
