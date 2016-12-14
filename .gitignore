@@ -5,5 +5,4 @@ metrics
 
 ### Sass ###
 .sass-cache
-*.min.css
 *.css.map
