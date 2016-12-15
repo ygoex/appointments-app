@@ -46,7 +46,7 @@ Bootstrap v3.3.7 is installed via `bower` and not via CDN because this way, usin
 ![UnCSS](https://raw.githubusercontent.com/ygoex/appointmentsapp/98b848c184b090965512f4399ee01f97f0ba9039/app/assets/img/UnCSS.png)
 
 ### Structure
-Apart from the dependencies previously described, the main app relays on three files located under app directory: index.html, custom.js and _general.scss
+Apart from the dependencies previously described, the main app relies on three files located under app directory: index.html, custom.js and _general.scss
 
 ```
 app/
@@ -132,7 +132,7 @@ Inside `js/` directory, there are two files:
       }
     };
     ```
-    Appointments are ordered using Angular's filter [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy).
+    Appointments are ordered using the Angular filter [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy).
     
   * myDirective (view)
   
@@ -157,7 +157,7 @@ Inside `js/` directory, there are two files:
 In order to automate the process and optimize the project some Grunt plugins are used. 
 
 ####Running the Build
-Writing `grunt` in the console launches the default Grunt tasks. An optimised copy of the `app/` folder is created in the `dist/` directory. The definition of the `grunt` build can be found in `grunt/aliases.yaml`. In the same folder, the rest of the files are the configuration for each task used in the project. For most small projects a single Gruntfile.js is perfect. But as a project grows, the Gruntfile.js can quickly become unmanagable; this is where load-grunt-config plugin comes in handy.
+Writing `grunt` in the console launches the default Grunt tasks. An optimised copy of the `app/` folder is created in the `dist/` directory. The definition of the `grunt` build can be found in `grunt/aliases.yaml`. In the same folder, the rest of the files are the configuration for each task used in the project. For most small projects a single Gruntfile.js is perfect. But as a project grows, the Gruntfile.js can quickly become unmanageable; this is where load-grunt-config plugin comes in handy.
 
 Other Grunt plugins used in this project are the following:
 
