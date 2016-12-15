@@ -29,6 +29,10 @@ Assuming that npm and Grunt are both installed:
   ```
   http://localhost:9000/
   ```
+ 
+If the installation is successful, the app will look like this screen shot
+
+![UnCSS](https://raw.githubusercontent.com/ygoex/appointments-app/master/app/assets/img/Screenshot.png)
 
 ## Project description
 
