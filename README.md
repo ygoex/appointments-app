@@ -69,10 +69,16 @@ app/
 └── index.html
 ```
 
-##js/
-In order to automate the process and optimize the project some Grunt plugins are used. 
+###js/
+Inside `js/` directory, there are two files:
 
-##Automation and optimisation
+1. app.js
+
+  This file is generated after executing the grunt task ngAnnotate (see description [here](#ngAnnotate)).
+  
+2. custom.js
+
+###Automation and optimisation
 In order to automate the process and optimize the project some Grunt plugins are used. 
 
 ###Running the Build
@@ -88,6 +94,9 @@ Use [grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy) to copy 
 
 ####htmlmin
 Use [grunt-contrib-htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin) to compress our HTML page (index.html). 
+
+####<a name="ngAnnotate">ng-annotate</a>
+Use [grunt-ng-annotate](https://github.com/mgol/grunt-ng-annotate) to rebuild angularjs dependency injection annotations. This plugin needs to run before uglify for protecting dependency injection against minification.
 
 ####Uglify
 Use [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify) to minify our JavaScript file, cutting out comments and shortening variables. 
