@@ -90,7 +90,7 @@ Inside `js/` directory, there are two files:
 
   This file is divided in three blocks to separate concerns:
   
-  In a larger project these blocks would be placed in different files to make everything more re-useable and easier to maintain, but for simplicity's sake I have included all of them in a single file.
+  In a larger project these blocks would be placed in different files to make everything more reusable and easier to maintain, but for simplicity's sake I have included all of them in a single file.
   
   * myFactory (model): is a method that allow us to share and inject data in different controllers. Normally, a factory is used to make Ajax calls to server RESTful services using [Angular $http service] (https://docs.angularjs.org/api/ng/service/$http).
     
