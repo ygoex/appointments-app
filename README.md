@@ -157,9 +157,9 @@ Inside `js/` directory, there are two files:
 In order to automate the process and optimize the project some Grunt plugins are used. 
 
 ####Running the Build
-Writing `$ grunt` in the console launches the Grunt tasks. An optimised copy of the `app/` folder is created in the `dist/` directory. 
+Writing `grunt` in the console launches the default Grunt tasks. An optimised copy of the `app/` folder is created in the `dist/` directory. The definition of the `grunt` build can be found in `grunt/aliases.yaml`. In the same folder, the rest of the files are the configuration for each task used in the project. For most small projects a single Gruntfile.js is perfect. But as a project grows, the Gruntfile.js can quickly become unmanagable; this is where load-grunt-config plugin comes in handy.
 
-The Grunt plugins used in this project are the following:
+Other Grunt plugins used in this project are the following:
 
 ####Clean
 Use [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean) to delete the previous `build` directory.
