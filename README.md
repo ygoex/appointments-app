@@ -136,7 +136,22 @@ Inside `js/` directory, there are two files:
     
   * myDirective (view)
   
-    Angular's filter orderBy is included in the module with the appointments view. This module is defined with myDirective.
+    Angular's filter orderBy is included in the component named `component.html` that contains the appointments view. This module is wrapped with script tags `type="text/ng-template"` and placed at the end of the html file.
+    
+    ```
+    <script type="text/ng-template" id="component.html">
+        <table class='table'>
+            <tr ng-repeat="app in apps | orderBy:'date'">
+                <td>
+                    <h4>{{app.title | uppercase}}</h4>
+                    <p>Date: {{app.date | date:'EEEE, dd MMMM yyyy'}}</p>
+                    <p>Time: {{app.date | date:'HH:mm'}}</p>
+                </td>
+            </tr>
+        </table>
+    </script>
+    ```
+    myDirective is responsible for the definition of component.html. The description of each setting is described inline with the code.
 
 ###Automation and optimisation
 In order to automate the process and optimize the project some Grunt plugins are used. 
