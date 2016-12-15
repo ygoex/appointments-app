@@ -5,20 +5,26 @@ Assuming that npm and Grunt are both installed:
 1. Download or clone the repository
 
   ```
-  git clone https://github.com/ygoex/appointmentsapp.git
+  git clone https://github.com/ygoex/appointments-app.git
+  ```
+  
+2. Go to project directory
+
+  ```
+  cd appointments-app/
   ```
 
-2. Install npm packages
+3. Install npm packages
 
   ```
   npm install
   ```
-3. Create a server to run the app
+4. Create a server to run the app
 
   ```
   grunt server
   ```
-4. In your browser go to 
+5. In your browser go to 
 
   ```
   http://localhost:9000/
