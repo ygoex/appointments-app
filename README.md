@@ -88,7 +88,16 @@ Inside `js/` directory, there are two files:
   
 2. custom.js
 
-  This file is divided in three blocks:
+  This file is divided in three blocks to separate concerns:
+  
+  In a larger project these blocks would be placed in different files to make everything more re-useable and easier to maintain, but for simplicity's sake I have included all of them in a single file.
+  
+  * myFactory (model): is a method that allow us to share and inject data in different controllers. Normally, a factory is used to make Ajax calls to server RESTful services using [Angular $http service] (https://docs.angularjs.org/api/ng/service/$http).
+    
+    In this app, myFactory is not calling a REST API. The data provided as example has been included in an array of objects and stored in the private variable `appointments`. This variable is made public through the object `getAll`.
+    
+  * myController (controller)
+  * myDirective (view)
 
 ###Automation and optimisation
 In order to automate the process and optimize the project some Grunt plugins are used. 
