@@ -78,10 +78,12 @@ Inside `js/` directory, there are two files:
   
 2. custom.js
 
+  This file is divided in three blocks:
+
 ###Automation and optimisation
 In order to automate the process and optimize the project some Grunt plugins are used. 
 
-###Running the Build
+####Running the Build
 Writing `$ grunt` in the console launches the Grunt tasks. An optimised copy of the `app/` folder is created in the `dist/` directory. 
 
 The Grunt plugins used in this project are the following:
