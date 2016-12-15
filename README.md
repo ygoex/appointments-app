@@ -177,6 +177,6 @@ Use [grunt-ng-annotate](https://github.com/mgol/grunt-ng-annotate) to rebuild an
 Use [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify) to minify our JavaScript file, cutting out comments and shortening variables. 
 
 
-## Future
+## Future things to do
 
 * Add local storage
