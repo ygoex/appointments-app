@@ -132,8 +132,11 @@ Inside `js/` directory, there are two files:
       }
     };
     ```
+    Appointments are ordered using Angular's filter [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy).
     
   * myDirective (view)
+  
+    Angular's filter orderBy is included in the module with the appointments view. This module is defined with myDirective.
 
 ###Automation and optimisation
 In order to automate the process and optimize the project some Grunt plugins are used. 
