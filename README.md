@@ -96,7 +96,12 @@ Inside `js/` directory, there are two files:
     
     In this app, myFactory is not calling a REST API. The data provided as example has been included in an array of objects and stored in the private variable `appointments`. This variable is made public through the object `getAll`.
     
-  * myController (controller)
+  * myController (controller): contains settings and functions to interact with the app. 
+    
+    The first thing the controller does is to call the factory method getAll and store the data a variable `$scope.apps = myFactory.getAll();`. Right after that, we count the number of appointments in the array to show it to the user in the view. The idea is to create visual and information hierarchy by going from the generics to the specific (first we show the total of appointments and then we show a list with each appointment and details).
+    
+    The following settings and functions will help users to add more appointments.
+    
   * myDirective (view)
 
 ###Automation and optimisation
