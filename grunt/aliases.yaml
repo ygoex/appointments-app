@@ -9,10 +9,15 @@ dev:
     - 'concurrent:devStep1'
     - 'concurrent:devStep2'
     - 'concurrent:devStep3'
+    - 'concurrent:devStep4'
 img:
   description: 'Image tasks'
   tasks:
     - 'concurrent:imageOpt'
+hash:
+  description: 'Hash files'
+  tasks:
+    - 'concurrent:fileHash'
 server:
   description: 'Create a server'
   tasks:

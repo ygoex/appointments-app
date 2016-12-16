@@ -6,7 +6,7 @@ module.exports = {
             sourceMap: true
         },
         files: [{
-            'dist/assets/css/custom.css': 'app/assets/stylesheets/scss/custom.scss'
+            'temp/css/custom.css': 'app/assets/stylesheets/scss/custom.scss'
         }]
     },
     // Production settings
@@ -16,7 +16,7 @@ module.exports = {
             sourceMap: false
         },
         files: [{
-            'dist/assets/css/custom.css': 'app/assets/stylesheets/scss/custom.scss'
+            'temp/css/app.css': 'app/assets/stylesheets/scss/custom.scss'
         }]
     }
 };

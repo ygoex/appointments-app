@@ -10,20 +10,29 @@ module.exports = {
         'clean',
         'ngAnnotate',
         'sass:prod',
+        'copy:assets',
     ],
     devStep2: [
-        'copy:dev',
+        'copy:js',
         'uglify',
         'cssmin',
     ],
     devStep3: [
         'uncss',
-        'concat',
+        'concat:lib',
+    ],
+    devStep4: [
+        'concat:all',
     ],
 
     // Image tasks
     imageOpt: [
         'imagemin',
-        'svgmin'
+        'svgmin',
+    ],
+
+    // File hash
+    fileHash: [
+        'hashres:prod'
     ]
 };

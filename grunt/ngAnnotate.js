@@ -4,7 +4,7 @@ module.exports = {
     },
     app: {
         files: {
-            './app/assets/js/app.js': ['./app/assets/js/custom.js']
+            './temp/js/custom-annotated.js': ['./app/assets/js/custom.js']
         }
     }
 };

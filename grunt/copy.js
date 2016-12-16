@@ -1,5 +1,5 @@
 module.exports = {
-    dev: {
+    assets: {
         expand: true,
         cwd: 'app/',
         src: [
@@ -15,8 +15,9 @@ module.exports = {
         cwd: 'app/bower-components/',
         src: [
             'jquery/dist/jquery.min.js',
-            'bootstrap/dist/js/bootstrap.min.js'
+            'angular/angular.min.js',
+            'angular-bootstrap/ui-bootstrap-tpls.min.js'
         ],
-        dest: 'temp/libs/',
+        dest: 'temp/js/libs/',
     }
 };

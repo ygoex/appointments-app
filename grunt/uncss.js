@@ -57,7 +57,7 @@ module.exports = {
             ]
         },
         files: {
-            'dist/assets/css/custom.min.css': ['dist/index.html']
+            'dist/assets/css/app.min.css': ['dist/index.html']
         }
     }
 };

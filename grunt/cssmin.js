@@ -3,7 +3,7 @@ module.exports = {
         keepSpecialComments: 0
     },
     site: {
-        src: ['./dist/assets/css/custom.css'],
-        dest: './dist/assets/css/custom.min.css'
+        src: ['./temp/css/app.css'],
+        dest: './dist/assets/css/app.min.css'
     }
 };
