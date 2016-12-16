@@ -3,7 +3,7 @@ module.exports = {
         separator: ';\n',
     },
     dist: {
-        src: ['temp/vendors/jquery/dist/jquery.min.js', 'temp/vendors/bootstrap/dist/js/bootstrap.min.js'],
-        dest: 'dist/assets/js/vendors.min.js',
+        src: ['temp/libs/jquery/dist/jquery.min.js', 'temp/libs/bootstrap/dist/js/bootstrap.min.js'],
+        dest: 'dist/assets/js/libs.min.js',
     }
 };

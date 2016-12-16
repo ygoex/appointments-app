@@ -8,6 +8,11 @@ dev:
   tasks:
     - 'concurrent:devStep1'
     - 'concurrent:devStep2'
+    - 'concurrent:devStep3'
+img:
+  description: 'Image tasks'
+  tasks:
+    - 'concurrent:imageOpt'
 server:
   description: 'Create a server'
   tasks:
