@@ -191,4 +191,4 @@ Use [grunt-contrib-htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin) to
 
 ## Future things to do
 
-* Add local storage
+* ~~Add local storage~~: done here http://codepen.io/ygoex/pen/GrgvdL
