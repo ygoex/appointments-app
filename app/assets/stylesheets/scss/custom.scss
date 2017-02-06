@@ -4,14 +4,17 @@
  AUTHOR: Yolanda Goex
 ********************************** */
 
+
 /* BOOTSTRAP */
+
 @import "./app/bower-components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 /* FONTS */
+
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
 
-/* BASE - Not used in Ecometrica test, but serve
-as a guide to see how I do structure projects */
+/* BASE */
+
 @import "custom/_mixins.scss";
 @import "custom/_variables.scss";
 @import "custom/_base.scss";
@@ -20,4 +23,5 @@ as a guide to see how I do structure projects */
 @import "custom/_components.scss";
 
 /* CUSTOM - Custom style used in Ecometrica test */
+
 @import "custom/sections/_general.scss"
